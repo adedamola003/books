@@ -24,10 +24,6 @@ class SearchController extends BaseController
      */
     public function search(Request $request): JsonResponse
     {
-        $allEnvVariables = $_ENV;
-
-        echo "<pre>";
-        print_r($allEnvVariables);
 
         //get query parameters
         $queryParameter = $request->all();
@@ -53,7 +49,7 @@ class SearchController extends BaseController
         elseif($key == 'year'){
             //validate request parameter
             $validator = Validator::make($request->all(), [
-                'year' => ['required', 'date_format:Y', 'regex:/[0-9]{4}/', 'min:0001']
+                'year' => ['required', 'date_format:Y', 'regex:/[0-9]{4}/', 'not_in:0000']
             ]);
             if ($validator->fails()) return $this->sendError('Validation Error.', $validator->messages());
             $validated = $validator->validated();
