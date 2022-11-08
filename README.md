@@ -17,4 +17,8 @@ PHP >= 8.0
 - run migrations (php artisan migrate).
 - Documentation [Documentation](https://documenter.getpostman.com/view/23520495/2s8YYMo1mm).
 - clear cache and optimize routes (php artisan optimize)
+- create a .env.testing file based on .env.testing.example
+- run php artisan optimize --env=testing
+- run php artisan migrate --env=testing
+- create separate db for running application test
 

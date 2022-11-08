@@ -6,6 +6,7 @@ use App\Classes\IceAndFireClass;
 use App\Http\Controllers\Api\V1\BaseController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
@@ -23,6 +24,11 @@ class SearchController extends BaseController
      */
     public function search(Request $request): JsonResponse
     {
+        $allEnvVariables = $_ENV;
+
+        echo "<pre>";
+        print_r($allEnvVariables);
+
         //get query parameters
         $queryParameter = $request->all();
 

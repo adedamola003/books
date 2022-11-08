@@ -14,16 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Article::factory(20)->create();
-        \App\Models\Tag::factory(5)->create();
-         \App\Models\User::factory(1)->create();
-
-        foreach (\App\Models\Article::all() as $article) {
-            \App\Models\PostTag::create([
-                'article_id' => $article->id,
-                'tag_id' => \App\Models\Tag::inRandomOrder()->first()->id,
-            ]);
-        }
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
