@@ -49,7 +49,7 @@ class BooksTest extends TestCase
             "name" => "The Game",
             "authors" => "adeyinka adedamola,adeyinka adetayo",
             "release_date" => "2021-01-01",
-            "isbn" => "124-840292825",
+            "isbn" => date('Ymdhis').'-'.rand(100000000,999999999),
             "number_of_pages" => "45",
             "country" => "Nigeria",
             "publisher" => "The house"
